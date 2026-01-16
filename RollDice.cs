@@ -2,18 +2,18 @@ namespace Mission2Assignment;
 
 internal class RollDice
 {
-    public int[] RollDiceSim(int rolls)
+    public int[] RollDiceSim(int rolls) // main sim method
     {
         Random rng = new Random();
-        int[] counts = new int[13];
+        int[] counts = new int[13]; // array to hold results in
         
         for (int i = 0; i < rolls; i++)
         {
-            int roll1 = rng.Next(1, 7);
+            int roll1 = rng.Next(1, 7); // randomly generated dice, total is added
             int roll2 = rng.Next(1, 7);
             int total = roll1 + roll2;
             
-            if (total == 2)
+            if (total == 2) // ignores 0 and 1 to avoid "array conversion"
             {
                 counts[2]++;
             }
